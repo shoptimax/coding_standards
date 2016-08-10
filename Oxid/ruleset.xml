@@ -28,6 +28,7 @@
     <!-- Set specific rules for certain sniffs. -->
     <rule ref="Zend.NamingConventions.ValidVariableName.NotCamelCaps">
         <exclude-pattern>*</exclude-pattern>
+        <type>warning</type>
     </rule>
 
     <rule ref="Zend.NamingConventions.ValidVariableName.MemberVarContainsNumbers">
@@ -44,14 +45,17 @@
 
     <rule ref="Zend.NamingConventions.ValidVariableName.PrivateNoUnderscore">
         <exclude-pattern>*</exclude-pattern>
+        <type>warning</type>
     </rule>
 
     <rule ref="Generic.Files.LineLength.TooLong">
         <exclude-pattern>*</exclude-pattern>
+        <type>warning</type>
     </rule>
 
     <rule ref="Oxid.Commenting.FunctionComment.MissingParamComment">
         <exclude-pattern>*</exclude-pattern>
+        <type>warning</type>
     </rule>
 
     <rule ref="PSR2.Classes.PropertyDeclaration.Underscore">

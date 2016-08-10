@@ -21,7 +21,15 @@
 
     <!--  Include specific sniffs from the other standards. -->
     <rule ref="Generic.Metrics.CyclomaticComplexity"/>
-    <rule ref="PEAR.Commenting.InlineComment"/>
+    <rule ref="PEAR.Commenting.InlineComment">
+        <exclude-pattern>*</exclude-pattern>
+        <type>warning</type>
+    </rule>
+    <rule ref="Oxid.Commenting.FunctionComment.Missing">
+        <exclude-pattern>*</exclude-pattern>
+        <type>warning</type>
+    </rule>
+
     <rule ref="PEAR.Files.IncludingFile"/>
     <rule ref="Zend.NamingConventions.ValidVariableName" />
 
@@ -60,7 +68,7 @@
     <rule ref="Generic.Files.LineLength">
         <properties>
             <property name="lineLimit" value="200"/>
-            <property name="absoluteLineLimit" value="400"/>
+            <property name="absoluteLineLimit" value="600"/>
         </properties>
         <type>warning</type>
     </rule>
@@ -69,6 +77,7 @@
         <exclude-pattern>*</exclude-pattern>
         <type>warning</type>
     </rule>
+
 
     <rule ref="PSR2.Classes.PropertyDeclaration.Underscore">
         <exclude-pattern>*</exclude-pattern>

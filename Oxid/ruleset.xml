@@ -3,8 +3,9 @@
     <description>OXID coding standards.</description>
 
     <!-- Ignore patterns -->
-    <exclude-pattern>*/application/views/*</exclude-pattern>
     <exclude-pattern>*/core/3rd_party_licenses/*</exclude-pattern>
+    <exclude-pattern>*/core/adodblite/*</exclude-pattern>
+    <exclude-pattern>*/core/application/views/*</exclude-pattern>
     <exclude-pattern>*/core/facebook/*</exclude-pattern>
     <exclude-pattern>*/core/jpgraph/*</exclude-pattern>
     <exclude-pattern>*/core/oxfunctions.php*</exclude-pattern>
@@ -21,28 +22,12 @@
 
     <!--  Include specific sniffs from the other standards. -->
     <rule ref="Generic.Metrics.CyclomaticComplexity"/>
-    <rule ref="PEAR.Commenting.InlineComment">
-        <exclude-pattern>*</exclude-pattern>
-        <type>warning</type>
-    </rule>
-    <rule ref="Oxid.Commenting.FunctionComment.Missing">
-        <exclude-pattern>*</exclude-pattern>
-        <type>warning</type>
-    </rule>
-
+    <rule ref="PEAR.Commenting.InlineComment"/>
     <rule ref="PEAR.Files.IncludingFile"/>
     <rule ref="Zend.NamingConventions.ValidVariableName" />
 
     <!-- Set specific rules for certain sniffs. -->
     <rule ref="Zend.NamingConventions.ValidVariableName.NotCamelCaps">
-        <exclude-pattern>*</exclude-pattern>
-        <type>warning</type>
-    </rule>
-
-    <rule ref="Generic.WhiteSpace.DisallowTabIndent">
-        <exclude-pattern>*</exclude-pattern>
-    </rule>
-    <rule ref="Zend.Files.ClosingTag">
         <exclude-pattern>*</exclude-pattern>
     </rule>
 
@@ -59,25 +44,49 @@
     </rule>
 
     <rule ref="Zend.NamingConventions.ValidVariableName.PrivateNoUnderscore">
-        <exclude-pattern>*</exclude-pattern>
+        <exclude-pattern>core/oxconfig.php</exclude-pattern>
     </rule>
 
     <rule ref="Generic.Files.LineLength.TooLong">
-        <message>Line longer than %s characters; contains %s characters</message>
-    </rule>
-    <rule ref="Generic.Files.LineLength">
-        <properties>
-            <property name="lineLimit" value="200"/>
-            <property name="absoluteLineLimit" value="600"/>
-        </properties>
-        <type>warning</type>
-    </rule>
-
-    <rule ref="Oxid.Commenting.FunctionComment.MissingParamComment">
         <exclude-pattern>*</exclude-pattern>
+    </rule>
+
+    <!-- SMX_SM - we change some ERRORs to WARNINGs here for now ... -->
+    <rule ref="Oxid.Commenting.FunctionComment.MissingParamComment">
+        <type>warning</type>
+    </rule>
+    <rule ref="Oxid.Commenting.FunctionComment.MissingParamTag">
+        <type>warning</type>
+    </rule>
+    <rule ref="Oxid.Commenting.FunctionComment.MissingParamName">
+        <type>warning</type>
+    </rule>
+    <rule ref="Oxid.Commenting.FunctionComment.Missing">
+        <type>warning</type>
+    </rule>
+    <rule ref="Oxid.Commenting.FunctionComment.SpacingAfter">
+        <type>warning</type>
+    </rule>
+    <rule ref="Oxid.Commenting.FunctionComment.SpacingAfterParamName">
         <type>warning</type>
     </rule>
 
+    <rule ref="PSR2.Files.ClosingTag.NotAllowed">
+        <type>warning</type>
+    </rule>
+    <rule ref="PSR2.Files.EndFileNewline.NoneFound">
+        <type>warning</type>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine">
+        <type>warning</type>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis">
+        <type>warning</type>
+    </rule>
+    <rule ref="Generic.Metrics.CyclomaticComplexity.MaxExceeded">
+        <type>warning</type>
+    </rule>
+    <!-- // SMX_SM -->
 
     <rule ref="PSR2.Classes.PropertyDeclaration.Underscore">
         <exclude-pattern>*</exclude-pattern>
@@ -87,16 +96,14 @@
         <exclude-pattern>*</exclude-pattern>
     </rule>
 
-    <!--
     <rule ref="PSR2">
         <exclude name="Squiz.Classes.ValidClassName"/>
         <exclude name="Generic.NamingConventions.CamelCapsFunctionName"/>
-        <type>warning</type>
     </rule>
+
     <rule ref="PSR1">
-        <exclude name="PSR1.Classes.ClassDeclaration"/>
-        <exclude name="PSR1.Files.SideEffects"/>
+        <exclude name="PSR1.Classes.ClassDeclaration"/><!--namespaces are not used yet-->
+        <exclude name="PSR1.Files.SideEffects"/><!--separation of logic is not used yet-->
     </rule>
-    -->
 
 </ruleset>

@@ -32,9 +32,9 @@ To install Coding Standards within shop directory, update/create `composer.json`
         "proprietary"
     ],
     "repositories": {
-        "oxid-esales/coding-standards": {
+        "shoptimax/coding-standards": {
             "type": "vcs",
-            "url": "https://github.com/OXID-eSales/coding_standards.git"
+            "url": "git@glass.shoptimax.de:oxid/coding_standards.git"
         },
         "squizlabs/php_codesniffer": {
             "type": "vcs",
@@ -42,7 +42,7 @@ To install Coding Standards within shop directory, update/create `composer.json`
         }
     },
     "require-dev": {
-        "oxid-esales/coding-standards": "^2.0.0"
+        "shoptimax/coding-standards": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true

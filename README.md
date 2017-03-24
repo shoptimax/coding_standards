@@ -34,7 +34,7 @@ To install Coding Standards within shop directory, update/create `composer.json`
     "repositories": {
         "shoptimax/coding-standards": {
             "type": "vcs",
-            "url": "git@glass.shoptimax.de:oxid/coding_standards.git"
+            "url": "https://github.com/shoptimax/coding_standards.git"
         },
         "squizlabs/php_codesniffer": {
             "type": "vcs",
